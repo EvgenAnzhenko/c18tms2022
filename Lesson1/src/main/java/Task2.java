@@ -5,23 +5,25 @@ import java.util.ArrayList;
 
 public class Task2 {
     public static void main(String[] args) throws IOException {
-        int a=0;
-        BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<Integer> l = new ArrayList<>();
+        int sum = 0;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        ArrayList<Integer> list = new ArrayList<>();
 
-        while (true)
-        {
-            String s = r.readLine();
-            if (s.isEmpty()) break;
-            l.add(Integer.parseInt(s));
+        while (true) {
+            String s = reader.readLine();
+            if (s.isEmpty()) {
+                break;
+            }
+            list.add(Integer.parseInt(s));
+        }
+        reader.close();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) > 0) {
+                sum++;
+            }
         }
 
-        for (int i=0; i<l.size(); i++)
-        {
-            if (l.get(i) > 0) a++;
-        }
-
-        System.out.println("количество положительных чисел = "+a);
+        System.out.println("количество положительных чисел = " + sum);
 
     }
 }
