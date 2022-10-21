@@ -10,11 +10,16 @@ public class Task2 {
         ArrayList<Integer> list = new ArrayList<>();
 
         while (true) {
-            String s = reader.readLine();
-            if (s.isEmpty()) {
-                break;
+            try {
+                String s = reader.readLine();
+                if (s.isEmpty()) {
+                    break;
+                }
+                list.add(Integer.parseInt(s));
+            } catch (NumberFormatException e) {
+                System.out.println("Вводим только цифры!");
             }
-            list.add(Integer.parseInt(s));
+
         }
         reader.close();
         for (int i = 0; i < list.size(); i++) {
