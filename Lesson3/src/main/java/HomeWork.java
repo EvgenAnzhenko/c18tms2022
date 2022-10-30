@@ -13,14 +13,13 @@ public class HomeWork {
      * 1. Метод должен вернуть сумму двух чисел a и b
      * 2. Дополнительно: сделать проверку если сумма a и b больше чем максимальное значение int то вернуть -1
      **/
-    public static long sum(long a, long b) {
+    public static int sum(int a, int b) {
 
-        long sum = a + b;
+        long sum = (long) a + b;
         if (sum > Integer.MAX_VALUE) {
             sum = -1;
         }
-
-        return sum;
+        return (int) sum;
     }
 
     /**
@@ -39,13 +38,13 @@ public class HomeWork {
      * Метод должен вернуть 10
      */
     public static int max(int a, int b) {
-        int max = 0;
+        int max = a;
         if (a > b) {
+
             max = a;
         } else if (b > a) {
             max = b;
-        } else if (a == b) {
-            max = a;
+            return max;
         }
         return max;
     }
@@ -59,26 +58,51 @@ public class HomeWork {
      * Метод должен return 3.0
      */
     public static double average(int[] array) {
-        int sum = 0;
-        for (int i : array) {
-            sum = sum + i;
+        double sum = 0;
+        double result;
+        try {
+            for (int i : array) {
+                sum = sum + i;
+            }
+            if (array.length == 0) {
+                result = 0;
+                return Math.abs(result);
+            } else {
+                result = sum / array.length;
+                return Math.abs(result);
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Array Null");
+            return 0;
         }
-        double average = sum / array.length;
-        return average;
+
+
     }
 
     /**
      * Метод должен вернуть максимальый элемент массива. Пример: array = {1,2,10,3} метод возвращает 10
      **/
     public static int max(int[] array) {
-        int max = 0;
-        for (int i : array) {
-            if (i > max) {
-                max = i;
-            }
+        try {
+            if (array.length > 0) {
+                int max = array[0];
+                for (int i : array) {
+                    if (i > max) {
+                        max = i;
+                    }
+                }
+                return max;
+
+            } else return 0;
+
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException");
         }
-        return max;
+        return 0;
+
+
     }
+
 
     /**
      * Используя теорему Пифагора, вычислите значение гипотенузы. Квадрат гипотенузы = сумме квадратов катетов
@@ -94,7 +118,8 @@ public class HomeWork {
      * return 20
      */
     public static double calculateHypotenuse(int a, int b) {
-        double calculateHypotenuse = Math.sqrt(a * a + b * b);
-        return calculateHypotenuse;
+
+        return Math.sqrt(a * a + b * b);
     }
 }
+
