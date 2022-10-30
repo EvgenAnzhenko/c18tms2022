@@ -39,12 +39,8 @@ public class HomeWork {
      */
     public static int max(int a, int b) {
         int max = a;
-        if (a > b) {
-
-            max = a;
-        } else if (b > a) {
+        if (b > a) {
             max = b;
-            return max;
         }
         return max;
     }
@@ -59,48 +55,35 @@ public class HomeWork {
      */
     public static double average(int[] array) {
         double sum = 0;
-        double result;
-        try {
+        if (array == null) {
+        } else if (array.length > 0) {
             for (int i : array) {
                 sum = sum + i;
             }
-            if (array.length == 0) {
-                result = 0;
-                return Math.abs(result);
-            } else {
-                result = sum / array.length;
-                return Math.abs(result);
-            }
-        } catch (NullPointerException e) {
-            System.out.println("Array Null");
-            return 0;
+            sum = sum / array.length;
+        } else {
         }
-
-
+        return sum;
     }
 
     /**
      * Метод должен вернуть максимальый элемент массива. Пример: array = {1,2,10,3} метод возвращает 10
      **/
     public static int max(int[] array) {
-        try {
-            if (array.length > 0) {
-                int max = array[0];
-                for (int i : array) {
-                    if (i > max) {
-                        max = i;
-                    }
+        int max;
+        if (array == null) {
+            max = 0;
+        } else if (array.length > 0) {
+            max = array[0];
+            for (int i : array) {
+                if (i > max) {
+                    max = i;
                 }
-                return max;
-
-            } else return 0;
-
-        } catch (NullPointerException e) {
-            System.out.println("NullPointerException");
+            }
+        } else {
+            max = 0;
         }
-        return 0;
-
-
+        return max;
     }
 
 
