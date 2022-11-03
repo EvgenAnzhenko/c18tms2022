@@ -119,6 +119,7 @@ public class HomeWork2 {
      * Метод должен печатать все простые числа <1000
      * что такое просто число (https://www.webmath.ru/poleznoe/formules_18_5.php)
      */
+
     public static void printPrimeNumbers() {
 
         for (int number = 2; number < 1000; number++) {
