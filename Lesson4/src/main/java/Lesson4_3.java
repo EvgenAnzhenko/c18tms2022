@@ -7,28 +7,29 @@ public class Lesson4_3 {
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()) {
             int amount = scanner.nextInt();
-            addList(amount);
+            System.out.println(minAbs(addList(amount)));
         }
     }
 
-    public static void addList(int amount) {    // метод для заполнения массива
+    public static ArrayList<Double> addList(int amount) {    // метод для заполнения массива
         ArrayList<Double> list = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < amount; i++) {
             System.out.println("Вводим " + (i + 1) + " число");
-            Scanner scanner = new Scanner(System.in);
+
             list.add(scanner.nextDouble());
         }
-        minAbs(list);
+        return list;
     }
 
-    public static void minAbs(ArrayList<Double> list) {  //метод для нахождения мин модуля
+    public static double minAbs(ArrayList<Double> list) {  //метод для нахождения минимального числа по модулю
         double min = Math.abs(list.get(0));
         for (int n = 0; n < list.size(); n++) {
             if (Math.abs(list.get(n)) < min) {
                 min = Math.abs(list.get(n));
             }
         }
-        System.out.println(min);
+        return min;
     }
 }
 
