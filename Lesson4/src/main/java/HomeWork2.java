@@ -85,13 +85,15 @@ public class HomeWork2 {
      * @param count - количество программистов
      */
     public static void countDevs(int count) {
-        if (count % 100 >= 5 && count % 100 <= 20) {
+        int c10 = count % 10;
+        int c100 = count % 100;
+        if (c100 >= 5 && c100 <= 20) {
             System.out.println(count + " программистов");
-        } else if ((count % 100 == 1) || (count % 100 == 21) || (count % 100 == 31) || (count % 100 == 41) || (count % 100 == 51) || (count % 100 == 61) || (count % 100 == 71) || (count % 100 == 81) || (count % 100 == 91)) {
+        } else if (c10 == 1 && c100 != 11) {
             System.out.println(count + " программист");
-        } else if (count % 10 >= 2 && count % 10 <= 4) {
+        } else if (c10 >= 2 && c10 <= 4) {
             System.out.println(count + " программиста");
-        } else if ((count % 10 >= 5 && count % 10 <= 9) || count % 10 == 0) {
+        } else if ((c10 >= 5 && c10 <= 9) || c10 == 0) {
             System.out.println(count + " программистов");
         }
     }
