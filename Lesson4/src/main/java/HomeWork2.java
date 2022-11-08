@@ -93,7 +93,7 @@ public class HomeWork2 {
             System.out.println(count + " программист");
         } else if (c10 >= 2 && c10 <= 4) {
             System.out.println(count + " программиста");
-        } else if ((c10 >= 5 && c10 <= 9) || c10 == 0) {
+        } else {
             System.out.println(count + " программистов");
         }
     }
