@@ -10,16 +10,33 @@ public class Lesson5Task5 {
         int first = scanner.nextInt();
         System.out.println("Введите второе число");
         int second = scanner.nextInt();
-        System.out.println(summ(first, second));
+        System.out.println(test(first, second));
 
     }
 
-    public static int summ(int a, int b) {
-        int summ = 0;
-        for (int count = 0; count < a; count++) {
-            summ += b;
+    public static int test(int a, int b) {
+        int test = 0;
+        if (a < 0 && b < 0) {
+            for (int count = 0; count < Math.abs(a); count++) {
+                test += Math.abs(b);
+            }
+        } else if (a < 0 && b > 0) {
+            for (int count = 0; count < b; count++) {
+                test += a;
+            }
+        } else if (a > 0 && b < 0) {
+            for (int count = 0; count < a; count++) {
+                test += b;
+            }
+        } else if (a > 0 && b > 0) {
+            for (int count = 0; count < a; count++) {
+                test += b;
+            }
+        } else {
+            test = 0;
         }
-        return summ;
+        return test;
     }
 }
+
 

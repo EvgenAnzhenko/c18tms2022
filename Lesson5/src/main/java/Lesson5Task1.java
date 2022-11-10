@@ -4,9 +4,9 @@ public class Lesson5Task1 {
 //        Рандомно генерируется число От 1 до 7.
 //        Если число равно 1, выводим на консоль “Понедельник”, 2 –”Вторник” и так далее.
 //        Если 6 или 7 – “Выходной”.
-        int FirstValue = 1;
-        int LastValue = 7;
-        int value = FirstValue + (int) (Math.random() * LastValue);
+        int firstValue = 1;
+        int lastValue = 7;
+        int value = firstValue + (int) (Math.random() * lastValue);
         switch (value) {
             case 1:
                 System.out.println("Понедельник");
