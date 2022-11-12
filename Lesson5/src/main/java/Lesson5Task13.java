@@ -51,19 +51,11 @@ public class Lesson5Task13 {
             }
         }
 
-//        for (int i = 0; i < mass.length; i++) {   //Вывод матрицы
-//            for (int j = 0; j < mass[i].length; j++) {
-//                System.out.print(mass[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
         System.out.println("Вывод новой матрицы");
         String result;
         for (int i = 0; i < mass.length; i++) {   //Вывод новой матрицыматрицы
             for (int j = 0; j < mass[i].length; j++) {
-                if ((mass[i][j] % 3 == 0) && (mass[i][j] % 7 == 0)) {
-                    result = "+";
-                } else if (mass[i][j] % 3 == 0) {
+                if (((mass[i][j] % 3 == 0) && (mass[i][j] % 7 == 0)) | (mass[i][j] % 3 == 0)) {
                     result = "+";
                 } else if (mass[i][j] % 7 == 0) {
                     result = "-";

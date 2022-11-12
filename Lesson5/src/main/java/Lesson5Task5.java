@@ -10,32 +10,27 @@ public class Lesson5Task5 {
         int first = scanner.nextInt();
         System.out.println("Введите второе число");
         int second = scanner.nextInt();
-        System.out.println(test(first, second));
+        System.out.println(summ(first, second));
 
     }
 
-    public static int test(int a, int b) {
-        int test = 0;
+    public static int summ(int a, int b) {
+        int summ = 0;
         if (a < 0 && b < 0) {
             for (int count = 0; count < Math.abs(a); count++) {
-                test += Math.abs(b);
+                summ += Math.abs(b);
             }
         } else if (a < 0 && b > 0) {
             for (int count = 0; count < b; count++) {
-                test += a;
+                summ += a;
             }
-        } else if (a > 0 && b < 0) {
+        } else if ((a > 0 && b < 0) || (a > 0 && b > 0)) {
+
             for (int count = 0; count < a; count++) {
-                test += b;
+                summ += b;
             }
-        } else if (a > 0 && b > 0) {
-            for (int count = 0; count < a; count++) {
-                test += b;
-            }
-        } else {
-            test = 0;
         }
-        return test;
+        return summ;
     }
 }
 
