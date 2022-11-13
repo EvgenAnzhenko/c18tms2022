@@ -22,7 +22,7 @@ public class Lesson5Task11 {
             for (int i = 0; i < list.size(); i++) {
                 result = list.get(i);
                 System.out.print(result);
-                if (list.get(i) != list.size()) {
+                if (i != list.size() - 1) {
                     System.out.print(",");
                 }
             }

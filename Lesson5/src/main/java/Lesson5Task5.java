@@ -20,12 +20,11 @@ public class Lesson5Task5 {
             for (int count = 0; count < Math.abs(a); count++) {
                 summ += Math.abs(b);
             }
-        } else if (a < 0 && b > 0) {
+        } else if (b > 0) {
             for (int count = 0; count < b; count++) {
                 summ += a;
             }
-        } else if ((a > 0 && b < 0) || (a > 0 && b > 0)) {
-
+        } else if (a > 0) {
             for (int count = 0; count < a; count++) {
                 summ += b;
             }
