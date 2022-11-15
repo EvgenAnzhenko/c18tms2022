@@ -3,14 +3,14 @@ package by.tms.model;
 import java.util.Scanner;
 
 public class Computer {
-    String cpu;
-    int ram;
-    int hdd;
-    int cycles;
-    int status = 1;
+    private String cpu;
+    private int ram;
+    private int hdd;
+    private int cycles;
+    private boolean burned = true;
 
     public void on() {
-        if (status == 1) {
+        if (burned) {
 
             System.out.println("Внимание! Введите 0 или 1");
             Scanner scanner = new Scanner(System.in);
@@ -20,7 +20,7 @@ public class Computer {
                 off();
             } else {
                 System.out.println("Компьютер сгорает");
-                status--;
+                burned = false;
             }
 
         } else {
@@ -41,17 +41,11 @@ public class Computer {
         System.out.println("Процессор:" + cpu + " оперативка:" + ram + " жесткий диск:" + hdd + " полных рабочих циклов:" + cycles);
     }
 
-    Computer(String cpu, int ram, int hdd, int cycles) {
+    public Computer(String cpu, int ram, int hdd, int cycles) {
         this.cpu = cpu;
         this.ram = ram;
         this.hdd = hdd;
         this.cycles = cycles;
     }
 
-    public static void main(String[] args) {
-        Computer com = new Computer("i7", 8192, 1000, 1000);
-        com.on();
-        com.info();
-
-    }
 }

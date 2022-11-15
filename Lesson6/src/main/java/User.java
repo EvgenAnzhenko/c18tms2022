@@ -13,7 +13,7 @@ public class User {
     }
 
     public String fullName() {                  //Метод для возврата имени и фамилии
-        return (firstName + " " + lastName);
+        return firstName + " " + lastName;
     }
 
     public void setAge(int age) {
@@ -25,7 +25,7 @@ public class User {
     }
 
     public String fullInfo() {
-        return (firstName + " " + lastName + " " + age + " y.o. " + gender);
+        return firstName + " " + lastName + " " + age + " y.o. " + gender;
     }
 
     @Deprecated
@@ -48,21 +48,6 @@ public class User {
         this.age = age;
     }
 
-    public static void main(String[] args) {
-        User user1 = new User();
-        User user2 = new User("Иван", "Иванов");
-        User user3 = new User("Петя", "Петров", 30);
-
-        user1.setFirstName("Евгений");
-        user1.setLastName("Анженко");
-        user1.setAge(33);
-        user1.setGender("male");
-        user1.increaseAge(2);
-
-        System.out.println(user3.fullName());
-        System.out.println(user1.fullInfo());
-
-    }
 }
 
 
