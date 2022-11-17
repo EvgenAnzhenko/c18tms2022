@@ -1,41 +1,52 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class MilitaryOffice {
     ArrayList<Person> personList;
 
-    MilitaryOffice(ArrayList<Person> PersonRegistry) {
-        this.personList = PersonRegistry;
+    public MilitaryOffice(ArrayList<Person> personList) {
+        this.personList = personList;
     }
 
-    public void list() {
+    public ArrayList<Person> getRecruits() {
+        ArrayList<Person> result = new ArrayList<>();
         for (Person person : personList) {
             if (person.getAge() >= 18 && person.getAge() <= 27 && person.getGender().equals("Мужской")) {
-                System.out.println(person.getFirstName() + " " + person.getLastName());
+                result.add(person);
             }
         }
+        return result;
     }
 
-    public void listMinsk() {
+    public List<Person> getRecruitsByName(String name) {
+        ArrayList<Person> result = new ArrayList<>();
         for (Person person : personList) {
-            if (person.getAge() >= 18 && person.getAge() <= 27 && person.getGender().equals("Мужской") && person.getCity().equals("Минск")) {
-                System.out.println(person.getFirstName() + " " + person.getLastName());
+            if (person.getAge() >= 18 && person.getAge() <= 27 && person.getFirstName().equals(name)) {
+                result.add(person);
             }
         }
+        return result;
     }
 
-    public void listOld() {
+    public List<Person> getRecruitsByCity(String name) {
+        ArrayList<Person> result = new ArrayList<>();
         for (Person person : personList) {
-            if (person.getAge() >= 25 && person.getAge() <= 27 && person.getGender().equals("Мужской")) {
-                System.out.println(person.getFirstName() + " " + person.getLastName());
+            if (person.getAge() >= 18 && person.getAge() <= 27 && person.getCity().equals(name)) {
+                result.add(person);
             }
         }
+        return result;
     }
 
-    public void listAlex() {
+
+    public List<Person> getRecruitsByAge(int from, int till) {
+        ArrayList<Person> result = new ArrayList<>();
         for (Person person : personList) {
-            if (person.getAge() >= 18 && person.getAge() <= 27 && person.getFirstName().equals("Александр")) {
-                System.out.println(person.getFirstName() + " " + person.getLastName());
+            if (person.getAge() >= from && person.getAge() <= till) {
+                result.add(person);
             }
         }
+        return result;
     }
+
 }

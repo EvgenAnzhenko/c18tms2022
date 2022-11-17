@@ -33,11 +33,18 @@ public class Main {
             System.out.println("Призывник добавлен !!!");
             System.out.println("Вводим Имя нового призывника или для Выхода нажима Enter");
         }
+
         MilitaryOffice mogilev = new MilitaryOffice(personRegistry);
-        mogilev.listOld();
-        mogilev.list();
-        mogilev.listMinsk();
-        mogilev.listAlex();
+
+        for (int i = 0; i < mogilev.getRecruits().size(); i++) {
+            System.out.println(mogilev.getRecruits().get(i).getFirstName() + " " + mogilev.getRecruits().get(i).getLastName());
+        }
+        System.out.println("Количество призывников с именем Александр : " + (mogilev.getRecruitsByName("Александр")).size());
+        System.out.println("Количество призывников c заданным возрастом : " + (mogilev.getRecruitsByAge(25, 27)).size());
+        System.out.println("Количество призывников проживающих в Минске : " + (mogilev.getRecruitsByCity("Минск")).size());
+        ;
+
+
     }
 }
 
