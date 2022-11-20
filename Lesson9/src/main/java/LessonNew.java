@@ -14,26 +14,28 @@ public class LessonNew {
 
 
     enum Season {
-        WINTER(-2), SPRING(7), SUMMER(19) {
+        WINTER(-2, "Winter"), SPRING(7, "Spring"), SUMMER(19, "Summer") {
             public String getDescription() {
 
                 return "Теплое время года";
             }
-        }, AUTUMN(7);
-        String favoriteSeason;
+        }, AUTUMN(7, "Autumn");
+        final String favoriteSeason;
         final int temp;
 
-        Season(int temp) {
+
+        Season(int temp, String favoriteSeason) {
             this.temp = temp;
+            this.favoriteSeason = favoriteSeason;
         }
 
-        public void setFavoriteSeason(Season type) {
+        public void resultFavoriteSeason() {
 
-            switch (type) {
-                case WINTER -> this.favoriteSeason = "Не люблю зиму";
-                case SPRING -> this.favoriteSeason = "Не люблю весну";
-                case SUMMER -> this.favoriteSeason = "Я люблю лето";
-                case AUTUMN -> this.favoriteSeason = "Не люблю осень";
+            switch (favoriteSeason) {
+                case "Winter" -> System.out.print("Не люблю зиму");
+                case "Spring" -> System.out.print("Не люблю весну");
+                case "Summer" -> System.out.print("Я люблю лето");
+                case "Autumn" -> System.out.print("Не люблю осень");
             }
 
         }
@@ -43,10 +45,6 @@ public class LessonNew {
             return "Холодное время года";
         }
 
-        public String getFavoriteSeason() {
-
-            return favoriteSeason + ". Средняя температура: " + temp;
-        }
 
         @Override
         public String toString() {
@@ -58,7 +56,8 @@ public class LessonNew {
         for (Season result : Season.values()) {
             System.out.println(result);
         }
-        Season.SUMMER.setFavoriteSeason(Season.SUMMER);
-        System.out.println(Season.SUMMER.getFavoriteSeason());
+
+        Season.WINTER.resultFavoriteSeason();
+
     }
 }
