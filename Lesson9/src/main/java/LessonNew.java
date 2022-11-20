@@ -50,16 +50,13 @@ public class LessonNew {
 
         @Override
         public String toString() {
-
-
             return super.toString() + " Средняя температура: " + temp + " " + getDescription();
         }
     }
 
     public static void main(String[] args) {
-
-        for (Season enu : Season.values()) {
-            System.out.println(enu);
+        for (Season result : Season.values()) {
+            System.out.println(result);
         }
         Season.SUMMER.setFavoriteSeason(Season.SUMMER);
         System.out.println(Season.SUMMER.getFavoriteSeason());
