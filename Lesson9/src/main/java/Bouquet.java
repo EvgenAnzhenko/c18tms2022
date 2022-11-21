@@ -25,7 +25,6 @@ public class Bouquet {
         int price = 0;
         for (int i = 0; i < bouquet.length; i++) {
             price += ((Flower) bouquet[i]).getCost();
-
         }
 
         return price;
