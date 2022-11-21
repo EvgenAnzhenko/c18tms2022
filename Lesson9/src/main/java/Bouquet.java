@@ -25,12 +25,14 @@ public class Bouquet {
         int price = 0;
         for (int i = 0; i < bouquet.length; i++) {
             price += ((Flower) bouquet[i]).getCost();
+
         }
 
         return price;
     }
 
     public static void main(String[] args) {
+        int amount = 0;
         Flower[] flowers = {new Flower("Peony", 8), new Flower("Rose", 10), new Flower("Tulip", 7), new Flower("Chamomile", 5)};
 
         Bouquet[][] allBouquet = new Bouquet[5][];   //Создаем 5 букетов
@@ -48,6 +50,12 @@ public class Bouquet {
             System.out.println();
 
         }
+        for (Bouquet[] bouquets : allBouquet) {
+            for (Bouquet bouquet : bouquets) {
+                amount++;
+            }
+        }
+        System.out.println(amount);                                     // Вывод общего количества проданных цветов
 
 
     }
