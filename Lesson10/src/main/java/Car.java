@@ -13,18 +13,17 @@ public class Car extends GroundTransport {
         this.numberOfPassengers = numberOfPassengers;
     }
 
-    void howManyKmCarTravel(int time) {
-        System.out.println("За " + time + " ч. автомобиль \"" + getModel() + "\" проедет с максимальной скоростью(" + getMaxSpeed() + " км/ч) : " + (time * getMaxSpeed()) + " км, потратит топлива : " + howManyFuelUsed(time) + " л.");
+    void calculateDistance(int time) {
+        System.out.println("За " + time + " ч. автомобиль \"" + getModel() + "\" проедет с максимальной скоростью(" + getMaxSpeed() + " км/ч) : " + (time * getMaxSpeed()) + " км, потратит топлива : " + calculateUsedFuel(time) + " л.");
     }
 
-    private Double howManyFuelUsed(double time) {
+    private Double calculateUsedFuel(double time) {
         return time * getMaxSpeed() * getFuelConsumption() / 100;
     }
 
     @Override
     public String toString() {
         return "This is a car: CarType is - " + getCarType() + ", NumberOfPassengers is - " + getNumberOfPassengers() + ", NumberOfWheels is - " + getNumberOfWheels() +
-                ", FuelConsumption is - " + getFuelConsumption() + ", Power is - " + getPower() + ", MaxSpeed is - " + getMaxSpeed() + ", Weight is - " +
-                getWeight() + ", Model is - " + getModel() + ", Power kV is - " + powerToPowerKv(getPower());
+                ", FuelConsumption is - " + getFuelConsumption() + ", Power kV is - " + powerToPowerKv(getPower()) + ", " + super.toString() + ".";
     }
 }
