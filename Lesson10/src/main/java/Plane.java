@@ -13,15 +13,14 @@ public class Plane extends AirTransport {
         this.businessClass = businessClass;
     }
 
-    void maxPassengersCheck(int amount) {
+    void checkMaxPassengers(int amount) {
         System.out.println(amount > getNumberOfPassengers() ? "Вам нужен самолет побольше" : "Все норм");
     }
 
     @Override
     public String toString() {
         return "This is a Plane: BusinessClass - " + (isBusinessClass() ? "is on the Plane" : "is not on the Plane") + ", NumberOfPassengers is - " + getNumberOfPassengers() +
-                ", Power is - " + getPower() + ", MaxSpeed is - " + getMaxSpeed() + ", Weight is - " +
-                getWeight() + ", Model is - " + getModel() + ", Power kV is - " + powerToPowerKv(getPower());
+                ", Power kV is - " + powerToPowerKv(getPower()) + ", " + super.toString() + ".";
     }
 
 }

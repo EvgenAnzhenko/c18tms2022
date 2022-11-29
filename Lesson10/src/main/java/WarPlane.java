@@ -23,8 +23,7 @@ public class WarPlane extends AirTransport {
 
     public String toString() {
         return "This is a WarPlane: NumberOfMissiles - " + getNumberOfMissiles() + ", EjectionSystem - " + (isEjectionSystem() ? "is on the Plane" : "is not on the Plane") +
-                ", Power is - " + getPower() + ", MaxSpeed is - " + getMaxSpeed() + ", Weight is - " +
-                getWeight() + ", Model is - " + getModel() + ", Power kV is - " + powerToPowerKv(getPower());
+                ", Power kV is - " + powerToPowerKv(getPower()) + ", " + super.toString() + ".";
     }
 
 }
