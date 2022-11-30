@@ -9,10 +9,10 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public abstract class Doctors {
+public abstract class Doctor {
     private String name;
     private String surName;
     private String specialization;
 
-    protected abstract void cure();
+    public abstract void cure();
 }

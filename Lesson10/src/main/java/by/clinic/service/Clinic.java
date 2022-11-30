@@ -1,25 +1,43 @@
 package by.clinic.service;
 
-import by.clinic.model.Dentist;
+import by.clinic.model.Doctor;
 import by.clinic.model.Patient;
-import by.clinic.model.Surgeon;
-import by.clinic.model.Therapist;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Clinic {
-    public void cure(Patient patient, Surgeon surgeon, Therapist therapist, Dentist dentist) {
-        switch (patient.composeCurePlan()) {
-            case 0 -> {
-                System.out.println("Пациент отправлен к хирургу");
-                surgeon.cure();
-            }
-            case 1 -> {
-                System.out.println("Пациент отправлен к терапевту");
-                therapist.cure();
-            }
-            case 2 -> {
-                System.out.println("Пациент отправлен к дантисту");
-                dentist.cure();
+
+    ArrayList<Doctor> doctors = new ArrayList<>();
+
+    public Clinic(Doctor... newDoctors) {
+        doctors.addAll(Arrays.asList(newDoctors));
+
+    }
+
+    void cure(Patient patient) {
+        getDoctor(patient).cure();
+    }
+
+    private Doctor getDoctor(Patient patient) {
+        Doctor doctor = null;
+        switch (patient.getCurePlan()) {
+            case 0 -> doctor = findDoctor("Хирург");
+            case 1 -> doctor = findDoctor("Терапевт");
+            case 2 -> doctor = findDoctor("Дантист");
+        }
+        return doctor;
+    }
+
+    private Doctor findDoctor(String type) {
+        Doctor doctor = null;
+        for (Doctor doctorList : doctors) {
+            if (doctorList.getSpecialization().equals(type)) {
+                doctor = doctorList;
             }
         }
+        return doctor;
     }
+
 }
+

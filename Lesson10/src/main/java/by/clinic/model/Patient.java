@@ -1,14 +1,25 @@
 package by.clinic.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-public class Patient extends CurePlan {
+
+public class Patient {
     private String name;
     private String surName;
+    private int curePlan;
+
+    public Patient(String name, String surName) {
+        this.name = name;
+        this.surName = surName;
+        this.curePlan = addCurePlan();
+    }
+
+    private int addCurePlan() {
+        CurePlan curePlan = new CurePlan();
+        return curePlan.composeCurePlan();
+    }
 
 }

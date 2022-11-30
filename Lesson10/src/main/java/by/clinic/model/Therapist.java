@@ -1,6 +1,6 @@
 package by.clinic.model;
 
-public class Therapist extends Doctors {
+public class Therapist extends Doctor {
     public Therapist(String name, String surName, String specialization) {
         super(name, surName, specialization);
     }
@@ -9,4 +9,5 @@ public class Therapist extends Doctors {
     public void cure() {
         System.out.println("Терапевт произвел лечение");
     }
+
 }
