@@ -7,11 +7,10 @@ import by.clinic.model.Therapist;
 
 public class Main {
     public static void main(String[] args) {
+        Clinic clinic = new Clinic(new Dentist("Костя", "Борисов", "Дантист"),
+                new Surgeon("Иван", "Иванов", "Хирург"),
+                new Therapist("Петя", "Петров", "Терапевт"));
         Patient patient = new Patient("Антон", "Богданов");
-        Surgeon surgeon = new Surgeon("Иван", "Иванов", "Хирург");
-        Therapist therapist = new Therapist("Петя", "Петров", "Хирург");
-        Dentist dentist = new Dentist("Костя", "Борисов", "Хирург");
-        Clinic clinic = new Clinic();
-        clinic.cure(patient, surgeon, therapist, dentist);
+        clinic.cure(patient);
     }
 }
