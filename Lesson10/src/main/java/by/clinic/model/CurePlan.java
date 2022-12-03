@@ -1,8 +1,15 @@
 package by.clinic.model;
 
-public class CurePlan {
-    public int composeCurePlan() {
-        return (int) (Math.random() * 3);
-    }
+import lombok.Getter;
 
+@Getter
+public class CurePlan {
+    private final int numberOfCurePlan;
+
+    public CurePlan() {
+        this.numberOfCurePlan = (int) (Math.random() * 3);
+    }
 }
+
+
+

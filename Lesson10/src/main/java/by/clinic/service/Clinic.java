@@ -21,7 +21,7 @@ public class Clinic {
 
     private Doctor getDoctor(Patient patient) {
         Doctor doctor = null;
-        switch (patient.getCurePlan()) {
+        switch (patient.getCurePlan().getNumberOfCurePlan()) {
             case 0 -> doctor = findDoctor("Хирург");
             case 1 -> doctor = findDoctor("Терапевт");
             case 2 -> doctor = findDoctor("Дантист");
