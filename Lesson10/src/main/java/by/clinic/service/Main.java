@@ -1,9 +1,6 @@
 package by.clinic.service;
 
-import by.clinic.model.Dentist;
-import by.clinic.model.Patient;
-import by.clinic.model.Surgeon;
-import by.clinic.model.Therapist;
+import by.clinic.model.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +8,7 @@ public class Main {
                 new Surgeon("Иван", "Иванов", "Хирург"),
                 new Therapist("Петя", "Петров", "Терапевт"));
         Patient patient = new Patient("Антон", "Богданов");
+        patient.setCurePlan(new CurePlan());
         clinic.cure(patient);
     }
 }
