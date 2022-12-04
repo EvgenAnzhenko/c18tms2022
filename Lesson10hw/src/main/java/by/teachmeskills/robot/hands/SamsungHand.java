@@ -1,13 +1,13 @@
 package by.teachmeskills.robot.hands;
 
-import lombok.AllArgsConstructor;
+import by.teachmeskills.robot.Parts;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
-public class SamsungHand implements IHand {
-
-    private int price;
+public class SamsungHand extends Parts implements IHand {
+    public SamsungHand(int price) {
+        super.setPrice(price);
+    }
 
     @Override
     public void upHand() {
@@ -16,6 +16,6 @@ public class SamsungHand implements IHand {
 
     @Override
     public int getPrice() {
-        return price;
+        return super.getPrice();
     }
 }

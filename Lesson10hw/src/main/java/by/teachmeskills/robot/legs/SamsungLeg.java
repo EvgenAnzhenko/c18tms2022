@@ -1,12 +1,13 @@
 package by.teachmeskills.robot.legs;
 
-import lombok.AllArgsConstructor;
+import by.teachmeskills.robot.Parts;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
-public class SamsungLeg implements ILeg {
-    private int price;
+public class SamsungLeg extends Parts implements ILeg {
+    public SamsungLeg(int price) {
+        super.setPrice(price);
+    }
 
     @Override
     public void step() {
@@ -16,6 +17,6 @@ public class SamsungLeg implements ILeg {
 
     @Override
     public int getPrice() {
-        return price;
+        return super.getPrice();
     }
 }

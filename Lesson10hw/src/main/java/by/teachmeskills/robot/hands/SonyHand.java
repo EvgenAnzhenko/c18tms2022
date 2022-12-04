@@ -1,15 +1,17 @@
 package by.teachmeskills.robot.hands;
 
-import lombok.AllArgsConstructor;
+import by.teachmeskills.robot.Parts;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class SonyHand implements IHand {
-
-    private int price;
+@ToString
+public class SonyHand extends Parts implements IHand {
+    public SonyHand(int price) {
+        super.setPrice(price);
+    }
 
     @Override
     public void upHand() {
@@ -18,6 +20,6 @@ public class SonyHand implements IHand {
 
     @Override
     public int getPrice() {
-        return price;
+        return super.getPrice();
     }
 }
