@@ -1,13 +1,14 @@
 package by.teachmeskills.robot.heads;
 
-public class SonyHead implements IHead {
-    private int price;
+import by.teachmeskills.robot.Parts;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@ToString
+@NoArgsConstructor
+public class SonyHead extends Parts implements IHead {
     public SonyHead(int price) {
-        this.price = price;
-    }
-
-    public SonyHead() {
+        super.setPrice(price);
     }
 
     @Override
@@ -17,6 +18,6 @@ public class SonyHead implements IHead {
 
     @Override
     public int getPrice() {
-        return price;
+        return super.getPrice();
     }
 }

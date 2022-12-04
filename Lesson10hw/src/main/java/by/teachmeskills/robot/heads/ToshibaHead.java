@@ -1,14 +1,15 @@
 package by.teachmeskills.robot.heads;
 
-import lombok.AllArgsConstructor;
+import by.teachmeskills.robot.Parts;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
-public class ToshibaHead implements IHead {
-    private int price;
+public class ToshibaHead extends Parts implements IHead {
+    public ToshibaHead(int price) {
+        super.setPrice(price);
+    }
 
     @Override
     public void speak() {
@@ -17,6 +18,6 @@ public class ToshibaHead implements IHead {
 
     @Override
     public int getPrice() {
-        return price;
+        return super.getPrice();
     }
 }

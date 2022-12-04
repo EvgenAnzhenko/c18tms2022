@@ -1,12 +1,13 @@
 package by.teachmeskills.robot.heads;
 
-import lombok.AllArgsConstructor;
+import by.teachmeskills.robot.Parts;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
-public class SamsungHead implements IHead {
-    private int price;
+public class SamsungHead extends Parts implements IHead {
+    public SamsungHead(int price) {
+        super.setPrice(price);
+    }
 
     @Override
     public void speak() {
@@ -15,6 +16,6 @@ public class SamsungHead implements IHead {
 
     @Override
     public int getPrice() {
-        return price;
+        return super.getPrice();
     }
 }
