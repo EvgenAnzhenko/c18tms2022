@@ -1,6 +1,6 @@
 package by.inter.service;
 
-public class Jacket implements IJacket {
+public class Jacket implements Action {
     @Override
     public void putOn() {
         System.out.println("Надел куртку");

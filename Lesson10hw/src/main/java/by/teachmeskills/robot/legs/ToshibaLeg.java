@@ -16,8 +16,4 @@ public class ToshibaLeg extends Parts implements ILeg {
         System.out.println("Делается шаг ногой Toshiba");
     }
 
-    @Override
-    public int getPrice() {
-        return super.getPrice();
-    }
 }

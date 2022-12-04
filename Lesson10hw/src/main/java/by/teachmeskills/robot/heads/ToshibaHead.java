@@ -16,8 +16,4 @@ public class ToshibaHead extends Parts implements IHead {
         System.out.println("Говорит голова Toshiba");
     }
 
-    @Override
-    public int getPrice() {
-        return super.getPrice();
-    }
 }

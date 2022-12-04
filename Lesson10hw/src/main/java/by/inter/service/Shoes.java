@@ -1,6 +1,6 @@
 package by.inter.service;
 
-public class Shoes implements IShoes {
+public class Shoes implements Action {
     @Override
     public void putOn() {
         System.out.println("Надел Туфли");

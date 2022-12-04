@@ -15,8 +15,4 @@ public class SamsungLeg extends Parts implements ILeg {
 
     }
 
-    @Override
-    public int getPrice() {
-        return super.getPrice();
-    }
 }

@@ -14,8 +14,4 @@ public class SamsungHead extends Parts implements IHead {
         System.out.println("Говорит голова Samsung");
     }
 
-    @Override
-    public int getPrice() {
-        return super.getPrice();
-    }
 }
