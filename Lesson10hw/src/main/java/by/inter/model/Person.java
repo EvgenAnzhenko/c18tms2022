@@ -11,10 +11,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Person {
-    String name;
-    Jacket jacket;
-    Pants pants;
-    Shoes shoes;
+    private String name;
+    private Jacket jacket;
+    private Pants pants;
+    private Shoes shoes;
 
     public void actionPutOn() {
         pants.putOn();

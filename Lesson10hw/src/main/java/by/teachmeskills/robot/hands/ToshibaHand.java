@@ -16,8 +16,4 @@ public class ToshibaHand extends Parts implements IHand {
         System.out.println("Поднимается рука Toshiba");
     }
 
-    @Override
-    public int getPrice() {
-        return super.getPrice();
-    }
 }

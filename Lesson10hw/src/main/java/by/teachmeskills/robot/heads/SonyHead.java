@@ -16,8 +16,4 @@ public class SonyHead extends Parts implements IHead {
         System.out.println("Говорит голова Sony");
     }
 
-    @Override
-    public int getPrice() {
-        return super.getPrice();
-    }
 }

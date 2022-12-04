@@ -14,8 +14,4 @@ public class SamsungHand extends Parts implements IHand {
         System.out.println("Поднимается рука Samsung");
     }
 
-    @Override
-    public int getPrice() {
-        return super.getPrice();
-    }
 }

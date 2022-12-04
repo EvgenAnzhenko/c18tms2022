@@ -18,8 +18,4 @@ public class SonyHand extends Parts implements IHand {
         System.out.println("Поднимается рука Sony");
     }
 
-    @Override
-    public int getPrice() {
-        return super.getPrice();
-    }
 }
