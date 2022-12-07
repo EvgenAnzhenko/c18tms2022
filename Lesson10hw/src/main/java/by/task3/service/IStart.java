@@ -1,9 +1,9 @@
 package by.task3.service;
 
 public interface IStart {
-    boolean checkSystem() throws InterruptedException;
+    boolean checkSystem();
 
-    void engineStart() throws InterruptedException;
+    void engineStart();
 
     void start();
 }
