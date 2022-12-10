@@ -10,12 +10,12 @@ import static com.lessons.model.Figure.listOfFigures;
 public class Main {
 
     public static void main(String[] args) {
-        Logic Logic = new Logic();
+        Logic logic = new Logic();
         listOfFigures.add(new Rectangle(1, 2));
         listOfFigures.add(new Line(5));
         listOfFigures.add(new Triangle(5, 5, 9));
-        Logic.getSquare(FigureTypes.TRIANGLE);
-        Logic.getSquare(FigureTypes.LINE);
-        Logic.getSquare(FigureTypes.RECTANGLE);
+        logic.getSquare(FigureTypes.TRIANGLE);
+        logic.getSquare(FigureTypes.LINE);
+        logic.getSquare(FigureTypes.RECTANGLE);
     }
 }
