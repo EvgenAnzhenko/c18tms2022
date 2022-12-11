@@ -1,4 +1,4 @@
-package by.test11.model;
+package by.clothing.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,15 +6,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public abstract class Clothing {
-    int size;
-    int price;
-    String color;
+    private ClothingSize size;
+    private int price;
+    private String color;
 
-    public Clothing(int size, int price, String color) {
+    public Clothing(ClothingSize size, int price, String color) {
         this.size = size;
         this.price = price;
         this.color = color;
     }
-
-    public abstract String toString();
 }

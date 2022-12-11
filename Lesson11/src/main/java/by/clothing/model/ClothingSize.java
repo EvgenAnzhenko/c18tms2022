@@ -1,4 +1,4 @@
-package by.test11.utils;
+package by.clothing.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,9 +12,15 @@ public enum ClothingSize {
             return "Детский размер";
         }
     }, XS(34), S(36), M(38), L(40);
+    @Getter
     private final int size;
 
     public String getDescription() {
         return "Взрослый размер";
+    }
+
+    @Override
+    public String toString() {
+        return "Size " + size;
     }
 }

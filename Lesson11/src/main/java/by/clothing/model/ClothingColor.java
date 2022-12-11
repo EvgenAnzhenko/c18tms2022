@@ -1,4 +1,4 @@
-package by.test11.utils;
+package by.clothing.model;
 
 import lombok.AllArgsConstructor;
 

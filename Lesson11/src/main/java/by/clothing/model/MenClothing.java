@@ -1,4 +1,4 @@
-package by.test11.model;
+package by.clothing.model;
 
 public interface MenClothing {
     void dressMan();
