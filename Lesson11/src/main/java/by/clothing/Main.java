@@ -9,13 +9,16 @@ import static by.clothing.model.ClothingColor.*;
 import static by.clothing.model.ClothingSize.*;
 
 public class Main {
-    ArrayList<Clothing> clothing = new ArrayList<>();
+    public static void main(String[] args) {
+        Atelier atelier = new Atelier(getListClothing(XXS, XS, S, M, L));
+        atelier.dressMan(atelier.clothing);
+        atelier.dressWomen(atelier.clothing);
+    }
 
-    public void getListClothing(ClothingSize... clothingSizes) {
-
+    public static ArrayList<Clothing> getListClothing(ClothingSize... clothingSizes) {
+        ArrayList<Clothing> clothing = new ArrayList<>();
         for (ClothingSize clothingSize : clothingSizes) {
             switch (clothingSize) {
-
                 case XXS -> {
                     clothing.add(new Tshirt(XXS, 20, getRandomColor()));
                     clothing.add(new Pants(XXS, 50, getRandomColor()));
@@ -48,9 +51,10 @@ public class Main {
                 }
             }
         }
+        return clothing;
     }
 
-    private String getRandomColor() {
+    private static String getRandomColor() {
         int numberColor = (int) (Math.random() * 4);
         return switch (numberColor) {
             case 0 -> BLUE.name();
@@ -59,15 +63,5 @@ public class Main {
             case 3 -> WHITE.name();
             default -> throw new IllegalStateException("Unexpected value: " + numberColor);
         };
-
-    }
-
-    public static void main(String[] args) {
-        Main main = new Main();
-        main.getListClothing(XXS, XS, S, M, L);
-        Atelier atelier = new Atelier();
-        atelier.dressMan(main.clothing);
-        atelier.dressWomen(main.clothing);
-
     }
 }
