@@ -1,15 +1,26 @@
 package com.lessons.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import static com.lessons.model.FigureTypes.TRIANGLE;
+
 @Getter
-public class Triangle extends Figure {
-    public Triangle(int length, int width, int hypotenuse) {
-        super(length, width, hypotenuse);
+@AllArgsConstructor
+public class Triangle extends Figure implements Colculationable {
+    private final FigureTypes type = TRIANGLE;
+    int sideA;
+    int sideB;
+    int sideC;
+
+    @Override
+    public FigureTypes getType() {
+        return type;
     }
 
-    public double getSquare() {
-        double perimeter = (getLength() + getWidth() + getHypotenuse()) * 1.0 / 2;
-        return Math.sqrt(perimeter * (perimeter - getLength()) * (perimeter - getWidth()) * (perimeter - getHypotenuse()));
+    @Override
+    public void getSquare() {
+        double perimeter = (getSideA() + getSideB() + getSideC()) * 1.0 / 2;
+        System.out.println("Площадь треугольника: " + Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * (perimeter - getSideC())));
     }
 }

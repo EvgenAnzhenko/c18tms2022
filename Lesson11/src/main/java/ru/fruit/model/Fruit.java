@@ -1,16 +1,13 @@
 package ru.fruit.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+@AllArgsConstructor
 @Getter
 public abstract class Fruit {
     private double weight;
-    private final double pricePerKilogram;
-
-    public Fruit(double weight, double pricePerKilogram) {
-        this.weight += weight;
-        this.pricePerKilogram = pricePerKilogram;
-    }
+    private double pricePerKilogram;
 
     abstract double getCostFruit();
 

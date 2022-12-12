@@ -7,6 +7,12 @@ import by.clothing.model.WomenClothing;
 import java.util.ArrayList;
 
 public class Atelier {
+    public ArrayList<Clothing> clothing;
+
+    public Atelier(ArrayList<Clothing> clothing) {
+        this.clothing = clothing;
+    }
+
     public void dressMan(ArrayList<Clothing> clothing) {
         for (Clothing dress : clothing) {
             if (dress instanceof MenClothing) {
