@@ -1,4 +1,4 @@
-package ru.autorization.service;
+package ru.autorization.exception;
 
 import lombok.NoArgsConstructor;
 

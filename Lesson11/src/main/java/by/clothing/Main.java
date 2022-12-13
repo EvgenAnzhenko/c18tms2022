@@ -11,8 +11,8 @@ import static by.clothing.model.ClothingSize.*;
 public class Main {
     public static void main(String[] args) {
         Atelier atelier = new Atelier(getListClothing(XXS, XS, S, M, L));
-        atelier.dressMan(atelier.clothing);
-        atelier.dressWomen(atelier.clothing);
+        atelier.dressMan();
+        atelier.dressWomen();
     }
 
     public static ArrayList<Clothing> getListClothing(ClothingSize... clothingSizes) {

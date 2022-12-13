@@ -13,7 +13,7 @@ public class Atelier {
         this.clothing = clothing;
     }
 
-    public void dressMan(ArrayList<Clothing> clothing) {
+    public void dressMan() {
         for (Clothing dress : clothing) {
             if (dress instanceof MenClothing) {
                 ((MenClothing) dress).dressMan();
@@ -21,7 +21,7 @@ public class Atelier {
         }
     }
 
-    public void dressWomen(ArrayList<Clothing> clothing) {
+    public void dressWomen() {
         for (Clothing dress : clothing) {
             if (dress instanceof WomenClothing) {
                 ((WomenClothing) dress).dressWomen();

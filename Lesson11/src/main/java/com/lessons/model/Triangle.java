@@ -8,19 +8,18 @@ import static com.lessons.model.FigureTypes.TRIANGLE;
 @Getter
 @AllArgsConstructor
 public class Triangle extends Figure implements Colculationable {
-    private final FigureTypes type = TRIANGLE;
     int sideA;
     int sideB;
     int sideC;
 
     @Override
     public FigureTypes getType() {
-        return type;
+        return TRIANGLE;
     }
 
     @Override
-    public void getSquare() {
+    public double getSquare() {
         double perimeter = (getSideA() + getSideB() + getSideC()) * 1.0 / 2;
-        System.out.println("Площадь треугольника: " + Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * (perimeter - getSideC())));
+        return Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * (perimeter - getSideC()));
     }
 }
